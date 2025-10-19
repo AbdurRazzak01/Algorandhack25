@@ -24,7 +24,7 @@
 
 ## 🎥 Demo
 
-[![Watch the video](https://img.youtube.com/vi/eCgZITySS2o/0.jpg)](https://youtu.be/eCgZITySS2o)
+[![Watch the video]([https://youtu.be/eCgZITySS2o](https://youtu.be/VJGvZJsw-fk))
 
 ---
 
@@ -205,6 +205,58 @@ curl http://127.0.0.1:5000/oracle/value
   * Mint requires ALGO collateral at oracle price.
   * Redemptions + burn reduce supply when price deviates.
   * **Hedging bot** simulates delta-neutral behavior (educational).
+
+---
+
+## 📜 On-chain Transactions (TestNet)
+
+> Quick view of every deployment we ran, with TXIDs and explorer links.
+
+### Assets (ASAs)
+
+- **AUSD (Algorand USD)** — **ASA ID:** `747999145`  
+  **TXID:** `TBNP4B7F5I2W7APIIPF46RWGEX2XX25RK655UFK4ETZTHAHIVAJA`  
+  🔎 View:  
+  - AlgoExplorer: https://testnet.algoexplorer.io/tx/TBNP4B7F5I2W7APIIPF46RWGEX2XX25RK655UFK4ETZTHAHIVAJA  
+  - GoalSeeker:  https://goalseeker.purestake.io/algorand/testnet/transaction/TBNP4B7F5I2W7APIIPF46RWGEX2XX25RK655UFK4ETZTHAHIVAJA  
+  - Pera:        https://explorer.perawallet.app/tx/testnet/TBNP4B7F5I2W7APIIPF46RWGEX2XX25RK655UFK4ETZTHAHIVAJA
+
+- **sAUSD (Staked AUSD)** — **ASA ID:** `747999146`  
+  **TXID:** `NEWYAZGWHUEPEYRCS6U5Q2DUG5L2LSJVKU4F72NIM5OURXWJFKUQ`  
+  🔎 View:  
+  - AlgoExplorer: https://testnet.algoexplorer.io/tx/NEWYAZGWHUEPEYRCS6U5Q2DUG5L2LSJVKU4F72NIM5OURXWJFKUQ  
+  - GoalSeeker:  https://goalseeker.purestake.io/algorand/testnet/transaction/NEWYAZGWHUEPEYRCS6U5Q2DUG5L2LSJVKU4F72NIM5OURXWJFKUQ  
+  - Pera:        https://explorer.perawallet.app/tx/testnet/NEWYAZGWHUEPEYRCS6U5Q2DUG5L2LSJVKU4F72NIM5OURXWJFKUQ
+
+### Applications (Stateful)
+
+- **MintRedeem App** — **App ID:** `747999340`  
+  **TXID:** `TZWV2GR2DGCRTORVIXD3IVHRVG2M5YCROS2N3FHQY2G2EEUFH2DQ`  
+  🔎 View:  
+  - AlgoExplorer: https://testnet.algoexplorer.io/tx/TZWV2GR2DGCRTORVIXD3IVHRVG2M5YCROS2N3FHQY2G2EEUFH2DQ  
+  - GoalSeeker:  https://goalseeker.purestake.io/algorand/testnet/transaction/TZWV2GR2DGCRTORVIXD3IVHRVG2M5YCROS2N3FHQY2G2EEUFH2DQ  
+  - Pera:        https://explorer.perawallet.app/tx/testnet/TZWV2GR2DGCRTORVIXD3IVHRVG2M5YCROS2N3FHQY2G2EEUFH2DQ
+
+- **Vault App** — **App ID:** `747999696`  
+  **TXID:** `MVW3D52ASAWSN5YQOD5EQDOOZ7TPTXOO3E46SNK6CQFBWL3XCEWA`  
+  🔎 View:  
+  - AlgoExplorer: https://testnet.algoexplorer.io/tx/MVW3D52ASAWSN5YQOD5EQDOOZ7TPTXOO3E46SNK6CQFBWL3XCEWA  
+  - GoalSeeker:  https://goalseeker.purestake.io/algorand/testnet/transaction/MVW3D52ASAWSN5YQOD5EQDOOZ7TPTXOO3E46SNK6CQFBWL3XCEWA  
+  - Pera:        https://explorer.perawallet.app/tx/testnet/MVW3D52ASAWSN5YQOD5EQDOOZ7TPTXOO3E46SNK6CQFBWL3XCEWA
+
+- **Oracle App** — **App ID:** `748000500`  
+  **TXID:** `5KNXTDRGL6AQ2S7MBWT2233EZK5MHN7S3P3NTGD6DVXQV54KML4A`  
+  🔎 View:  
+  - AlgoExplorer: https://testnet.algoexplorer.io/tx/5KNXTDRGL6AQ2S7MBWT2233EZK5MHN7S3P3NTGD6DVXQV54KML4A  
+  - GoalSeeker:  https://goalseeker.purestake.io/algorand/testnet/transaction/5KNXTDRGL6AQ2S7MBWT2233EZK5MHN7S3P3NTGD6DVXQV54KML4A  
+  - Pera:        https://explorer.perawallet.app/tx/testnet/5KNXTDRGL6AQ2S7MBWT2233EZK5MHN7S3P3NTGD6DVXQV54KML4A
+
+- **Guardian App** — **App ID:** `748000860`  
+  **TXID:** `FRLWDL2QJ6KT3GLECEULRKRY7Z4ZYOAFQO2FPJNPR5Q6QNWQHL7A`  
+  🔎 View:  
+  - AlgoExplorer: https://testnet.algoexplorer.io/tx/FRLWDL2QJ6KT3GLECEULRKRY7Z4ZYOAFQO2FPJNPR5Q6QNWQHL7A  
+  - GoalSeeker:  https://goalseeker.purestake.io/algorand/testnet/transaction/FRLWDL2QJ6KT3GLECEULRKRY7Z4ZYOAFQO2FPJNPR5Q6QNWQHL7A  
+  - Pera:        https://explorer.perawallet.app/tx/testnet/FRLWDL2QJ6KT3GLECEULRKRY7Z4ZYOAFQO2FPJNPR5Q6QNWQHL7A
 
 ---
 
