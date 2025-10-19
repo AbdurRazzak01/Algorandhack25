@@ -92,6 +92,75 @@ This is ideal for developers, DeFi builders, and anyone exploring stablecoin mec
   - Hedging bot simulates maintaining neutrality via shorting
 
 ---
+After Running asa: 
+
+🚀 Creating ASA Algorand USD (AUSD)...
+⏳ Waiting for confirmation... TXID = TBNP4B7F5I2W7APIIPF46RWGEX2XX25RK655UFK4ETZTHAHIVAJA
+✅ Created ASA: Algorand USD (AUSD) with ID: 747999145
+🚀 Creating ASA Staked Algorand USD (sAUSD)...
+⏳ Waiting for confirmation... TXID = NEWYAZGWHUEPEYRCS6U5Q2DUG5L2LSJVKU4F72NIM5OURXWJFKUQ
+✅ Created ASA: Staked Algorand USD (sAUSD) with ID: 747999146
+📦 ASA IDs saved to contracts/asa_ids.json
+(.venv) mdabdurrazzak@MDs-MacBook-Pro backend % 
+
+Compiler Response: {'hash': 'XUJZ2QJ7P5CFRMHCRRC6VU2YKI5UV2UBBJKJ26KYSEFT2AAKTVMTZX6Q4M', 'result': 'CCACAAEmAgtUb3RhbE1pbnRlZAZQYXVzZWQxGCISQAA3MRkiEkAAByNAAAEAI0M2GgCABG1pbnQSQAAWNhoAgAZyZWRlZW0SQAABAIgAJkIADogADUIACCgiZykiZyNDI0OKAAApZCISRCgoZDYaARcIZyNDigAAKWQiEkQoKGQ2GgEXCWcjQw=='}
+Compiler Response: {'hash': 'OHV4S2PM4R3XXXQOIKERQ6OV2OYRZZG6A66XSUVR5ADF4NXVPEZRXMYYQE', 'result': 'CIEBQw=='}
+⏳ Deploying MintRedeem App... TXID: TZWV2GR2DGCRTORVIXD3IVHRVG2M5YCROS2N3FHQY2G2EEUFH2DQ
+✅ MintRedeem App deployed successfully! App ID: 747999340
+(.venv) mdabdurrazzak@MDs-MacBook-Pro backend % 
+
+
+ Compiled and wrote vault_approval.teal and vault_clear.teal
+(.venv) mdabdurrazzak@MDs-MacBook-Pro backend % python3 contracts/deploy_vault.py
+
+Compiler Response: {'hash': 'DVXYR2LAN7273WEINOU4SU2Q3H52TAHB2MT6Y3QARWCJC33FRZM2BDCZCA', 'result': 'CCADAMCEPQEmAwNOQVYBcgtsYXN0X3VwZGF0ZTEYIhJAAEgxGSISQAABADYaAIAFc3Rha2USQAAsNhoAgAd1bnN0YWtlEkAAFjYaAIAGYWNjcnVlEkAAAQCIAINCABiIAERCABKIABFCAAwoImcpI2cqMgdnJEMiQ4oAACgoZDYaARcIZ4ALbWludF9zQVVTRDo2GgEXIx0iKWQfSEhMFEQWULAkQ4oAACgoZDYaARcpZB0iIx9ISEwURAlngAxyZXR1cm5fQVVTRDo2GgEXKWQdIiMfSEhMFEQWULAkQ4oAAChkIg1EKChkNhoBFwhnKSlkKGQ2GgEXCB0iKGQfSEhMFERnKjIHZyRD'}
+Compiler Response: {'hash': 'OHV4S2PM4R3XXXQOIKERQ6OV2OYRZZG6A66XSUVR5ADF4NXVPEZRXMYYQE', 'result': 'CIEBQw=='}
+⏳ Deploying Vault App... TXID: MVW3D52ASAWSN5YQOD5EQDOOZ7TPTXOO3E46SNK6CQFBWL3XCEWA
+✅ Vault App deployed successfully! App ID: 747999696
+(.venv) mdabdurrazzak@MDs-MacBook-Pro backend % 
+
+(.venv) mdabdurrazzak@MDs-MacBook-Pro backend % python3 contracts/oracle.py
+
+✅ Compiled and wrote oracle_approval.teal and oracle_clear.teal
+(.venv) mdabdurrazzak@MDs-MacBook-Pro backend % python3 contracts/deploy_oracle.py
+
+Compiler Response: {'hash': 'KYX3P4IS76F2OEGA2GO7P3O2OYR7VZ4GSDKOPGG7ZBRSNULWRKXBTLCIAY', 'result': 'CCACAAEmAgVwcmljZQJ0czEYIhJAADAxGSISQAAHI0AAAQAiQzYaAIAEcHVzaBJAAAEAMRuBBBJEKDYaARdnKTYaAhdnI0MoImcpImeABnNpZ25lcjYaAGcjQw=='}
+Compiler Response: {'hash': 'OHV4S2PM4R3XXXQOIKERQ6OV2OYRZZG6A66XSUVR5ADF4NXVPEZRXMYYQE', 'result': 'CIEBQw=='}
+⏳ Deploying Oracle App... TXID: 5KNXTDRGL6AQ2S7MBWT2233EZK5MHN7S3P3NTGD6DVXQV54KML4A
+✅ Oracle App deployed successfully! App ID: 748000500
+(.venv) mdabdurrazzak@MDs-MacBook-Pro backend % 
+
+ Compiled and wrote guardian_approval.teal and guardian_clear.teal
+(.venv) mdabdurrazzak@MDs-MacBook-Pro backend % python3 contracts/guardian.py
+
+✅ Compiled and wrote guardian_approval.teal and guardian_clear.teal
+(.venv) mdabdurrazzak@MDs-MacBook-Pro backend % python3 contracts/deploy_guardian.py
+
+Compiler Response: {'hash': 'M5RWXXIDGRVL77724BQ6VB5XP2MP6AEA3DUJFUD2PBMQHCCNWB5ZCK5Z2U', 'result': 'CCACAQAmBQVBZG1pbgZQYXVzZWQHTWludENhcAtNYXhRdW90ZUFnZQxEZXZpYXRpb25CcHMxGCMSQACCMRkjEkAAByJAAAEAI0M2GgCACnNldF9wYXVzZWQSQABbNhoAgAxzZXRfbWludF9jYXASQABANhoAgBFzZXRfbWF4X3F1b3RlX2FnZRJAACA2GgCAEXNldF9kZXZpYXRpb25fYnBzEkAAAQCIAF8jQ4gASUL/+IgAMkL/8ogAG0L/7CgxAGcpI2cqgcCEPWcrgTxnJwSBMmciQ4oAADEAKGQSRCk2GgEXZyJDigAAMQAoZBJEKjYaARdnIkOKAAAxAChkEkQrNhoBF2ciQ4oAADEAKGQSRCcENhoBF2ciQw=='}
+Compiler Response: {'hash': 'OHV4S2PM4R3XXXQOIKERQ6OV2OYRZZG6A66XSUVR5ADF4NXVPEZRXMYYQE', 'result': 'CIEBQw=='}
+⏳ Deploying Guardian App... TXID: FRLWDL2QJ6KT3GLECEULRKRY7Z4ZYOAFQO2FPJNPR5Q6QNWQHL7A
+✅ Guardian App deployed successfully! App ID: 748000860
+
+
+# 💼 Merchant Wallet
+MERCHANT_ADDR=J7GW4BILZGJ2BYRL7VSM3PAQLEZK5AAWIPEQQCBQMUTQNMGJWRL6L3IMVA
+
+# 🌐 Node Access (AlgoNode)
+ALGOD_URL=https://testnet-api.algonode.cloud
+ALGOD_TOKEN=a
+
+# 📦 Deployed App Info
+
+
+# 🧾 Compiled Escrow TEAL Program (Base64)
+
+
+VITE_EXPLORER_BASE=https://lora.algorand.foundation/tx/
+VITE_APP_ID=747943848
+VITE_MERCHANT=J7GW4BILZGJ2BYRL7VSM3PAQLEZK5AAWIPEQQCBQMUTQNMGJWRL6L3IMVA
+VITE_AGENT_API=http://localhost:8080
+VITE_ALGOD_URL=https://testnet-api.algonode.cloud
+
 
 ## 🚀 Getting Started
 
