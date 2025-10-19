@@ -48,3 +48,44 @@ Compiler Response: {'hash': 'OHV4S2PM4R3XXXQOIKERQ6OV2OYRZZG6A66XSUVR5ADF4NXVPEZ
 ⏳ Deploying Guardian App... TXID: FRLWDL2QJ6KT3GLECEULRKRY7Z4ZYOAFQO2FPJNPR5Q6QNWQHL7A
 ✅ Guardian App deployed successfully! App ID: 748000860
 (.venv) mdabdurrazzak@MDs-MacBook-Pro backend % 
+
+
+
+backend
+
+# 💼 Merchant Wallet
+MERCHANT_ADDR=J7GW4BILZGJ2BYRL7VSM3PAQLEZK5AAWIPEQQCBQMUTQNMGJWRL6L3IMVA
+MERCHANT_MN="notable obey carbon need employ wagon merit tomorrow fall path fine setup master crime bamboo fly harsh uphold goose extra favorite board toward absent truly"
+
+# 🌐 Node Access (AlgoNode)
+ALGOD_URL=https://testnet-api.algonode.cloud
+ALGOD_TOKEN=a
+
+# 📦 Deployed App Info
+
+
+
+
+
+ORACLE_MN="notable obey carbon need employ wagon merit tomorrow fall path fine setup master crime bamboo fly harsh uphold goose extra favorite board toward absent truly"
+ORACLE_ADDR="J7GW4BILZGJ2BYRL7VSM3PAQLEZK5AAWIPEQQCBQMUTQNMGJWRL6L3IMVA"
+
+GUARDIAN_MN="notable obey carbon need employ wagon merit tomorrow fall path fine setup master crime bamboo fly harsh uphold goose extra favorite board toward absent truly"
+GUARDIAN_ADDR="J7GW4BILZGJ2BYRL7VSM3PAQLEZK5AAWIPEQQCBQMUTQNMGJWRL6L3IMVA"
+
+
+
+
+
+# 🧾 Compiled Escrow TEAL Program (Base64)
+
+
+
+frontend
+
+VITE_EXPLORER_BASE=https://lora.algorand.foundation/tx/
+VITE_APP_ID=747943848
+VITE_MERCHANT=J7GW4BILZGJ2BYRL7VSM3PAQLEZK5AAWIPEQQCBQMUTQNMGJWRL6L3IMVA
+VITE_AGENT_API=http://localhost:8080
+VITE_ALGOD_URL=https://testnet-api.algonode.cloud
+
