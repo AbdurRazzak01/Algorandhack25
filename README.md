@@ -1,16 +1,5 @@
 
-You said:
 # AlgoStable: Algorithm-Backed Synthetic Stablecoin on Algorand
-
-![Algorand](https://img.shields.io/badge/Built_on-Algorand-blue.svg)
-![Python](https://img.shields.io/badge/Backend-Python%20%7C%20FastAPI-green.svg)
-![Smart Contracts](https://img.shields.io/badge/Smart_Contracts-TEAL%20%7C%20PyTeal-orange.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
----
-[![Watch the video](https://img.youtube.com/vi/eCgZITySS2o/0.jpg)](https://youtu.be/eCgZITySS2o)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eCgZITySS2o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 🎯 Overview
 
@@ -27,9 +16,21 @@ This is ideal for developers, DeFi builders, and anyone exploring stablecoin mec
 
 ---
 
+## 🍺 UI screenshots
+
+<img width="2940" height="1662" alt="earn" src="https://github.com/user-attachments/assets/b6324415-8096-4034-ad36-23e5434d45a6" />
+<img width="2940" height="1666" alt="swap" src="https://github.com/user-attachments/assets/449aef85-ec82-4f36-88f6-05c06db338c2" />
+<img width="2940" height="1660" alt="rewards" src="https://github.com/user-attachments/assets/3a5f2ad4-adc2-4366-b416-06ace07f15c6" />
+<img width="2876" height="1676" alt="dashboards" src="https://github.com/user-attachments/assets/cc178a5a-bb8b-4d01-b54a-539a23995105" />
+
+---
+
+---
+
 ## 📽 Demo Video
 
-👉 [![Watch the Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
+- short demo: https://youtu.be/VJGvZJsw-fk?si=9PxwOqc8KYlTNil2
+- long demo: https://youtu.be/jmknrrvdvmE
 
 > 📹 Full walkthrough of minting, oracle, and vaults.
 
