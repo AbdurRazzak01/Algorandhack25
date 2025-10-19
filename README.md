@@ -1,4 +1,4 @@
-# 🔁 AUSD: Algorithm-Backed Synthetic Stablecoin on Algorand
+# AlgoStable: Algorithm-Backed Synthetic Stablecoin on Algorand
 
 ![Algorand](https://img.shields.io/badge/Built_on-Algorand-blue.svg)
 ![Python](https://img.shields.io/badge/Backend-Python%20%7C%20FastAPI-green.svg)
@@ -6,6 +6,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ---
+https://youtu.be/eCgZITySS2o?si=eYCuYe-ckaXqjawI
 
 ## 🎯 Overview
 
