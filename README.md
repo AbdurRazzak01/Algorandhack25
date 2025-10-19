@@ -24,7 +24,7 @@
 
 ## 🎥 Demo
 
-[![Watch the video]([https://youtu.be/eCgZITySS2o](https://youtu.be/VJGvZJsw-fk))
+[![Watch the video]([https://youtu.be/eCgZITySS2o](https://youtu.be/VJGvZJsw-fk))]
 
 ---
 
