@@ -6,7 +6,9 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ---
-https://youtu.be/eCgZITySS2o?si=eYCuYe-ckaXqjawI
+[![Watch the video](https://img.youtube.com/vi/eCgZITySS2o/0.jpg)](https://youtu.be/eCgZITySS2o)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eCgZITySS2o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 🎯 Overview
 
