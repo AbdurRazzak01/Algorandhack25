@@ -1,0 +1,13 @@
+{
+    "user": {
+      "address": "J7GW4BILZGJ2BYRL7VSM3PAQLEZK5AAWIPEQQCBQMUTQNMGJWRL6L3IMVA",
+      "plan": "monthly",
+      "usage_this_month": 1.8,
+      "threshold": 2.0,
+      "monthly_cost": 2.0,
+      "annual_discount_bps": 2000,
+      "streaming_rate": 0.01,
+      "streaming_enabled": false
+    }
+  }
+  

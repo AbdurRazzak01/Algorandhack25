@@ -1,0 +1,23 @@
+[
+    {
+      "title": "Wallet Connect",
+      "src": "/screens/connect.png",
+      "desc": "Instantly connect your Pera wallet with one tap."
+    },
+    {
+      "title": "Plan Selection",
+      "src": "/screens/plans.png",
+      "desc": "Pick Monthly, Annual, or Streaming."
+    },
+    {
+      "title": "Agent Offer",
+      "src": "/screens/agent.png",
+      "desc": "Smart pricing recommendations via GPT."
+    },
+    {
+      "title": "Streaming Console",
+      "src": "/screens/streaming.png",
+      "desc": "Live stream/withdraw dashboard with TxID receipts."
+    }
+  ]
+  

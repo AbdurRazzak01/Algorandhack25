@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#0A0E14; --panel:rgba(255,255,255,0.06); --stroke:rgba(255,255,255,0.12);
+  --acc1:#62FFF6; --acc2:#7C4DFF; --ok:#27E1A0; --warn:#FFC857; --err:#FF6B6B;
+}
+html, body, #root { height: 100%; }
+body {
+  background: radial-gradient(1200px 800px at 70% -10%, rgba(124,77,255,.18), transparent 60%),
+              radial-gradient(900px 700px at 10% 110%, rgba(98,255,246,.15), transparent 60%),
+              var(--bg);
+  color:#fff; text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+
+.noise {
+  pointer-events:none; position:fixed; inset:0; z-index:50; opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' opacity='.05'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:soft-light;
+}
+.aurora {
+  position: fixed; inset:-20% -10% auto -10%; height:70vh; z-index:-1;
+  background: conic-gradient(from 180deg at 50% 50%, rgba(124,77,255,.35), rgba(98,255,246,.35), rgba(124,77,255,.35));
+  filter: blur(80px);
+  animation: aurora 18s ease-in-out infinite;
+}
+@keyframes aurora {
+  0% { transform: translate(-10%, -10%) scale(1); opacity:.45;}
+  50%{ transform: translate(5%, 5%) scale(1.05); opacity:.6;}
+  100%{ transform: translate(-10%, -10%) scale(1); opacity:.45;}
+}

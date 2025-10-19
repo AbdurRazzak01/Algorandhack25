@@ -1,0 +1,48 @@
+#pragma version 8
+txn ApplicationID
+int 0
+==
+bnz main_l8
+txn OnCompletion
+int NoOp
+==
+bnz main_l5
+int 1
+bnz main_l4
+err
+main_l4:
+int 0
+return
+main_l5:
+txna ApplicationArgs 0
+byte "push"
+==
+bnz main_l7
+err
+main_l7:
+txn NumAppArgs
+int 4
+==
+assert
+byte "price"
+txna ApplicationArgs 1
+btoi
+app_global_put
+byte "ts"
+txna ApplicationArgs 2
+btoi
+app_global_put
+int 1
+return
+main_l8:
+byte "price"
+int 0
+app_global_put
+byte "ts"
+int 0
+app_global_put
+byte "signer"
+txna ApplicationArgs 0
+app_global_put
+int 1
+return

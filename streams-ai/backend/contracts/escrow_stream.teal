@@ -1,0 +1,25 @@
+#pragma version 8
+global GroupSize
+int 2
+==
+gtxn 0 TypeEnum
+int pay
+==
+&&
+gtxn 0 Receiver
+addr J7GW4BILZGJ2BYRL7VSM3PAQLEZK5AAWIPEQQCBQMUTQNMGJWRL6L3IMVA
+==
+&&
+gtxn 1 TypeEnum
+int appl
+==
+&&
+gtxn 1 ApplicationID
+int 747943848
+==
+&&
+gtxna 1 ApplicationArgs 0
+byte "auth_wd"
+==
+&&
+return

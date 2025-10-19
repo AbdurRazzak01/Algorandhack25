@@ -1,0 +1,462 @@
+#pragma version 8
+txn ApplicationID
+int 0
+==
+bnz main_l33
+txn OnCompletion
+int OptIn
+==
+bnz main_l32
+txn OnCompletion
+int ClearState
+==
+bnz main_l31
+txn OnCompletion
+int UpdateApplication
+==
+bnz main_l30
+txn OnCompletion
+int DeleteApplication
+==
+bnz main_l29
+txna ApplicationArgs 0
+byte "set_policy"
+==
+bnz main_l28
+txna ApplicationArgs 0
+byte "apply_discount"
+==
+bnz main_l27
+txna ApplicationArgs 0
+byte "set_plan"
+==
+bnz main_l26
+txna ApplicationArgs 0
+byte "pause"
+==
+bnz main_l25
+txna ApplicationArgs 0
+byte "cancel"
+==
+bnz main_l24
+txna ApplicationArgs 0
+byte "pull"
+==
+bnz main_l18
+txna ApplicationArgs 0
+byte "stream_toggle"
+==
+bnz main_l15
+txna ApplicationArgs 0
+byte "auth_wd"
+==
+bnz main_l14
+err
+main_l14:
+txn Sender
+byte "merchant"
+app_global_get
+==
+assert
+txna Accounts 1
+byte "status"
+app_local_get
+byte "active"
+==
+assert
+txna Accounts 1
+byte "stream_on"
+app_local_get
+int 1
+==
+assert
+txna ApplicationArgs 1
+btoi
+byte "rate"
+app_global_get
+global Round
+txna Accounts 1
+byte "last_wd"
+app_local_get
+-
+*
+<=
+assert
+txna Accounts 1
+byte "last_wd"
+global Round
+app_local_put
+int 1
+return
+main_l15:
+txn Sender
+txna Accounts 1
+==
+assert
+txna Accounts 1
+byte "stream_on"
+txna ApplicationArgs 1
+btoi
+app_local_put
+txna ApplicationArgs 1
+btoi
+int 1
+==
+bnz main_l17
+main_l16:
+int 1
+return
+main_l17:
+txna Accounts 1
+byte "last_wd"
+global Round
+app_local_put
+b main_l16
+main_l18:
+txn Sender
+byte "merchant"
+app_global_get
+==
+assert
+txna Accounts 1
+byte "status"
+app_local_get
+byte "active"
+==
+assert
+global Round
+txna Accounts 1
+byte "next_due"
+app_local_get
+>=
+assert
+txna Accounts 1
+byte "max_month_spend"
+app_local_get
+int 0
+>
+bnz main_l23
+main_l19:
+gtxn 0 TypeEnum
+int pay
+==
+assert
+gtxn 0 Sender
+txna Accounts 1
+==
+assert
+gtxn 0 Receiver
+byte "merchant"
+app_global_get
+==
+assert
+gtxn 0 Amount
+byte "price"
+app_global_get
+int 10000
+txna Accounts 1
+byte "disc_bps"
+app_local_get
+-
+*
+int 10000
+/
+>=
+assert
+txna Accounts 1
+byte "next_due"
+global Round
+byte "period"
+app_global_get
++
+app_local_put
+global Round
+txna Accounts 1
+byte "month_roll"
+app_local_get
+-
+int 1000000
+>
+bnz main_l22
+txna Accounts 1
+byte "month_acc"
+txna Accounts 1
+byte "month_acc"
+app_local_get
+byte "price"
+app_global_get
+int 10000
+txna Accounts 1
+byte "disc_bps"
+app_local_get
+-
+*
+int 10000
+/
++
+app_local_put
+main_l21:
+int 1
+return
+main_l22:
+txna Accounts 1
+byte "month_roll"
+global Round
+app_local_put
+txna Accounts 1
+byte "month_acc"
+byte "price"
+app_global_get
+int 10000
+txna Accounts 1
+byte "disc_bps"
+app_local_get
+-
+*
+int 10000
+/
+app_local_put
+b main_l21
+main_l23:
+txna Accounts 1
+byte "month_acc"
+app_local_get
+byte "price"
+app_global_get
+int 10000
+txna Accounts 1
+byte "disc_bps"
+app_local_get
+-
+*
+int 10000
+/
++
+txna Accounts 1
+byte "max_month_spend"
+app_local_get
+<=
+assert
+b main_l19
+main_l24:
+txn Sender
+txna Accounts 1
+==
+txn Sender
+txna Accounts 1
+byte "agent_addr"
+app_local_get
+==
+global Round
+txna Accounts 1
+byte "policy_exp"
+app_local_get
+<=
+&&
+||
+assert
+txna Accounts 1
+byte "status"
+byte "cancelled"
+app_local_put
+int 1
+return
+main_l25:
+txn Sender
+txna Accounts 1
+==
+txn Sender
+txna Accounts 1
+byte "agent_addr"
+app_local_get
+==
+global Round
+txna Accounts 1
+byte "policy_exp"
+app_local_get
+<=
+&&
+||
+assert
+txna Accounts 1
+byte "status"
+byte "paused"
+app_local_put
+int 1
+return
+main_l26:
+txn Sender
+txna Accounts 1
+==
+assert
+txna Accounts 1
+byte "status"
+byte "active"
+app_local_put
+int 1
+return
+main_l27:
+txn Sender
+txna Accounts 1
+byte "agent_addr"
+app_local_get
+==
+global Round
+txna Accounts 1
+byte "policy_exp"
+app_local_get
+<=
+&&
+assert
+txna ApplicationArgs 2
+btoi
+txna Accounts 1
+byte "nonce"
+app_local_get
+==
+assert
+txna ApplicationArgs 1
+btoi
+txna Accounts 1
+byte "max_disc_bps"
+app_local_get
+<=
+assert
+txna Accounts 1
+byte "disc_bps"
+txna ApplicationArgs 1
+btoi
+app_local_put
+int 1
+return
+main_l28:
+txn Sender
+txna Accounts 0
+==
+assert
+txna ApplicationArgs 4
+btoi
+txna Accounts 0
+byte "nonce"
+app_local_get
+>
+assert
+txna Accounts 0
+byte "agent_addr"
+txna Accounts 1
+app_local_put
+txna Accounts 0
+byte "policy_exp"
+txna ApplicationArgs 1
+btoi
+app_local_put
+txna Accounts 0
+byte "max_disc_bps"
+txna ApplicationArgs 2
+btoi
+app_local_put
+txna Accounts 0
+byte "max_month_spend"
+txna ApplicationArgs 3
+btoi
+app_local_put
+txna Accounts 0
+byte "nonce"
+txna ApplicationArgs 4
+btoi
+app_local_put
+int 1
+return
+main_l29:
+txn Sender
+byte "merchant"
+app_global_get
+==
+assert
+int 1
+return
+main_l30:
+int 0
+return
+main_l31:
+int 1
+return
+main_l32:
+txn Sender
+byte "status"
+byte "paused"
+app_local_put
+txn Sender
+byte "plan_id"
+int 1
+app_local_put
+txn Sender
+byte "next_due"
+global Round
+byte "period"
+app_global_get
++
+app_local_put
+txn Sender
+byte "disc_bps"
+int 0
+app_local_put
+txn Sender
+byte "month_acc"
+int 0
+app_local_put
+txn Sender
+byte "month_roll"
+global Round
+app_local_put
+txn Sender
+byte "agent_addr"
+global ZeroAddress
+app_local_put
+txn Sender
+byte "policy_exp"
+global Round
+app_local_put
+txn Sender
+byte "max_disc_bps"
+int 0
+app_local_put
+txn Sender
+byte "max_month_spend"
+int 0
+app_local_put
+txn Sender
+byte "nonce"
+int 0
+app_local_put
+txn Sender
+byte "last_wd"
+global Round
+app_local_put
+txn Sender
+byte "stream_on"
+int 0
+app_local_put
+int 1
+return
+main_l33:
+byte "merchant"
+txn Sender
+app_global_put
+byte "price"
+txna ApplicationArgs 0
+btoi
+app_global_put
+byte "period"
+txna ApplicationArgs 1
+btoi
+app_global_put
+byte "rate"
+txna ApplicationArgs 2
+btoi
+app_global_put
+byte "v"
+byte "1.1"
+app_global_put
+int 1
+return

@@ -1,0 +1,125 @@
+#pragma version 8
+txn ApplicationID
+int 0
+==
+bnz main_l15
+txn OnCompletion
+int NoOp
+==
+bnz main_l5
+int 1
+bnz main_l4
+err
+main_l4:
+int 0
+return
+main_l5:
+txna ApplicationArgs 0
+byte "set_paused"
+==
+bnz main_l14
+txna ApplicationArgs 0
+byte "set_mint_cap"
+==
+bnz main_l13
+txna ApplicationArgs 0
+byte "set_max_quote_age"
+==
+bnz main_l12
+txna ApplicationArgs 0
+byte "set_deviation_bps"
+==
+bnz main_l10
+err
+main_l10:
+callsub setdeviationbps_3
+main_l11:
+int 0
+return
+main_l12:
+callsub setmaxquoteage_2
+b main_l11
+main_l13:
+callsub setmintcap_1
+b main_l11
+main_l14:
+callsub setpaused_0
+b main_l11
+main_l15:
+byte "Admin"
+txn Sender
+app_global_put
+byte "Paused"
+int 0
+app_global_put
+byte "MintCap"
+int 1000000
+app_global_put
+byte "MaxQuoteAge"
+int 60
+app_global_put
+byte "DeviationBps"
+int 50
+app_global_put
+int 1
+return
+
+// set_paused
+setpaused_0:
+proto 0 0
+txn Sender
+byte "Admin"
+app_global_get
+==
+assert
+byte "Paused"
+txna ApplicationArgs 1
+btoi
+app_global_put
+int 1
+return
+
+// set_mint_cap
+setmintcap_1:
+proto 0 0
+txn Sender
+byte "Admin"
+app_global_get
+==
+assert
+byte "MintCap"
+txna ApplicationArgs 1
+btoi
+app_global_put
+int 1
+return
+
+// set_max_quote_age
+setmaxquoteage_2:
+proto 0 0
+txn Sender
+byte "Admin"
+app_global_get
+==
+assert
+byte "MaxQuoteAge"
+txna ApplicationArgs 1
+btoi
+app_global_put
+int 1
+return
+
+// set_deviation_bps
+setdeviationbps_3:
+proto 0 0
+txn Sender
+byte "Admin"
+app_global_get
+==
+assert
+byte "DeviationBps"
+txna ApplicationArgs 1
+btoi
+app_global_put
+int 1
+return
